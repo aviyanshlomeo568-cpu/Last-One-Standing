@@ -1,0 +1,19 @@
+{
+  "name": "last-one-standing",
+  "version": "1.0.0",
+  "description": "Last One Standing - 12 player couch co-op survival game",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite game"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "three": "^0.185.1"
+  },
+  "devDependencies": {
+    "vite": "^8.2.2"
+  }
+}
