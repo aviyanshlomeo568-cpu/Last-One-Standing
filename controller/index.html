@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+  >
+
+  <title>Last One Standing - Controller</title>
+
+  <!-- THIS IS THE IMPORTANT PART -->
+  <link rel="stylesheet" href="./style.css">
+
+  <!-- Supabase -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+</head>
+
+<body>
+
+  <!-- Rotate phone message -->
+  <div id="rotate-overlay">
+    <div class="rotate-icon"></div>
+    <div class="rotate-text">Rotate your phone</div>
+  </div>
+
+  <main id="app">
+
+    <div class="arena-glow"></div>
+
+    <!-- =========================================================
+         SCREEN 1 — JOIN
+         ========================================================= -->
+    <section id="screen-name" class="screen is-active">
+
+      <div class="screen-inner">
+
+        <div>
+          <div class="eyebrow">LAST ONE STANDING</div>
+
+          <h1 class="game-title">
+            JOIN THE GAME
+          </h1>
+        </div>
+
+        <form id="name-form" class="name-form">
+
+          <label
+            for="name-input"
+            class="field-label"
+          >
+            PLAYER NAME
+          </label>
+
+          <input
+            id="name-input"
+            type="text"
+            maxlength="16"
+            autocomplete="off"
+            placeholder="Enter your name"
+          >
+
+          <div
+            id="name-count"
+            class="name-count"
+          >
+            0 / 16
+          </div>
+
+          <div
+            id="name-error"
+            class="name-error"
+            aria-live="polite"
+          ></div>
+
+          <button
+            id="join-button"
+            class="btn-primary"
+            type="submit"
+          >
+            JOIN GAME
+          </button>
+
+        </form>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         SCREEN 2 — READY
+         ========================================================= -->
+    <section
+      id="screen-ready"
+      class="screen"
+    >
+
+      <div class="screen-inner">
+
+        <div class="eyebrow">
+          LAST ONE STANDING
+        </div>
+
+        <h2 class="game-title">
+          YOU'RE IN
+        </h2>
+
+        <div class="player-card">
+
+          <div class="player-name">
+            <span id="ready-player-name">PLAYER</span>
+          </div>
+
+          <div class="player-number-row">
+
+            <span class="player-number-label">
+              PLAYER
+            </span>
+
+            <span
+              id="ready-player-number"
+              class="player-number"
+            >
+              —
+            </span>
+
+          </div>
+
+        </div>
+
+        <div
+          id="connection-status"
+          class="status-pill"
+        >
+          <span class="status-dot"></span>
+
+          <span id="connection-status-text">
+            CONNECTING...
+          </span>
+        </div>
+
+        <button
+          id="ready-button"
+          class="btn-primary"
+          type="button"
+        >
+          READY
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         SCREEN 3 — CONTROLLER
+         ========================================================= -->
+    <section
+      id="screen-game"
+      class="screen"
+    >
+
+      <div class="game-layout">
+
+        <!-- Top status -->
+        <div class="status-bar">
+
+          <span class="status-bar-name">
+            <span id="game-player-name">
+              PLAYER
+            </span>
+          </span>
+
+          <span class="status-bar-divider">
+            •
+          </span>
+
+          <span>
+            PLAYER
+            <span id="game-player-number">
+              —
+            </span>
+          </span>
+
+          <span
+            id="game-round"
+            class="status-bar-round"
+          >
+            ROUND 1
+          </span>
+
+        </div>
+
+
+        <!-- Controls -->
+        <div class="game-controls">
+
+          <!-- JOYSTICK -->
+          <div class="joystick-zone">
+
+            <div
+              id="joystick-base"
+              class="joystick-base"
+            >
+
+              <div
+                id="joystick-knob"
+                class="joystick-knob"
+              ></div>
+
+            </div>
+
+          </div>
+
+
+          <!-- ACTION BUTTONS -->
+          <div
+            id="action-buttons"
+            class="action-zone"
+          >
+
+            <button
+              class="action-btn"
+              data-action="RUN"
+              type="button"
+            >
+              RUN
+            </button>
+
+            <button
+              class="action-btn"
+              data-action="JUMP"
+              type="button"
+            >
+              JUMP
+            </button>
+
+            <button
+              class="action-btn"
+              data-action="PUSH"
+              type="button"
+            >
+              PUSH
+            </button>
+
+            <button
+              class="action-btn"
+              data-action="ABILITY"
+              type="button"
+            >
+              ABILITY
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- Controller JavaScript -->
+  <script src="./controller.js"></script>
+
+</body>
+</html>

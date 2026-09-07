@@ -1,0 +1,724 @@
+@import url(
+    'https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&display=swap'
+);
+
+
+/* =========================
+   RESET
+========================= */
+
+.how-to-play,
+.how-to-play * {
+
+    box-sizing: border-box;
+
+}
+
+
+.how-to-play {
+
+    position: fixed;
+
+    inset: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    overflow: hidden;
+
+    background: #030405;
+
+    color: white;
+
+    font-family:
+        "Barlow Condensed",
+        sans-serif;
+
+    z-index: 100;
+
+}
+
+
+/* =========================
+   BACKGROUND
+========================= */
+
+.htp-background {
+
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+        url("../../assets/menu-bg.png");
+
+    background-size: cover;
+
+    background-position: center;
+
+    filter:
+        brightness(0.35)
+        saturate(0.75);
+
+}
+
+
+/* Dark overlay */
+
+.htp-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,0.88),
+            rgba(0,0,0,0.55),
+            rgba(0,0,0,0.85)
+        );
+
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.htp-header {
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 75px;
+
+    z-index: 10;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding:
+        0 55px;
+
+    border-bottom:
+        1px solid
+        rgba(255,22,130,0.35);
+
+    background:
+        rgba(0,0,0,0.55);
+
+    letter-spacing: 3px;
+
+}
+
+
+.system-status {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    font-size: 14px;
+
+}
+
+
+.status-dot {
+
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: #ff1682;
+
+    box-shadow:
+        0 0 12px #ff1682;
+
+}
+
+
+.page-name {
+
+    color: #ff1682;
+
+    font-size: 17px;
+
+}
+
+
+.game-name {
+
+    color:
+        rgba(255,255,255,0.35);
+
+    font-size: 12px;
+
+}
+
+
+/* =========================
+   CONTENT
+========================= */
+
+.htp-content {
+
+    position: absolute;
+
+    inset: 75px 0 65px;
+
+    z-index: 5;
+
+    display: grid;
+
+    grid-template-columns:
+        330px
+        1fr;
+
+    gap: 55px;
+
+    padding:
+        45px 70px;
+
+}
+
+
+/* =========================
+   TITLE
+========================= */
+
+.htp-title {
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+}
+
+
+.symbols {
+
+    display: flex;
+
+    gap: 15px;
+
+    color: #ff1682;
+
+    font-size: 35px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.htp-title h1 {
+
+    font-size:
+        clamp(
+            65px,
+            6vw,
+            100px
+        );
+
+    line-height: 0.8;
+
+    font-weight: 800;
+
+    letter-spacing: -2px;
+
+}
+
+
+.htp-title h1 span {
+
+    color: #ff1682;
+
+    text-shadow:
+        0 0 25px
+        rgba(255,22,130,0.4);
+
+}
+
+
+.htp-title p {
+
+    margin-top: 25px;
+
+    color:
+        rgba(255,255,255,0.55);
+
+    font-size: 15px;
+
+    line-height: 1.5;
+
+    letter-spacing: 3px;
+
+}
+
+
+/* =========================
+   INSTRUCTIONS
+========================= */
+
+.instructions {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 15px;
+
+    align-content: center;
+
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.instruction-card {
+
+    position: relative;
+
+    min-height: 145px;
+
+    padding: 25px;
+
+    display: grid;
+
+    grid-template-columns:
+        35px
+        55px
+        1fr;
+
+    gap: 15px;
+
+    align-items: center;
+
+    background:
+        rgba(4,6,7,0.82);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.12);
+
+    transition:
+        0.2s ease;
+
+}
+
+
+.instruction-card:hover {
+
+    border-color:
+        rgba(255,22,130,0.8);
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 10px 30px
+        rgba(0,0,0,0.5);
+
+}
+
+
+.instruction-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+    bottom: 0;
+
+    width: 3px;
+
+    background: #ff1682;
+
+    box-shadow:
+        0 0 15px
+        rgba(255,22,130,0.6);
+
+}
+
+
+.step-number {
+
+    align-self: start;
+
+    font-size: 13px;
+
+    color:
+        rgba(255,255,255,0.35);
+
+    letter-spacing: 2px;
+
+}
+
+
+.card-icon {
+
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    border:
+        1px solid
+        rgba(255,22,130,0.5);
+
+    font-size: 23px;
+
+}
+
+
+.card-content h2 {
+
+    font-size: 21px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 8px;
+
+}
+
+
+.card-content p {
+
+    color:
+        rgba(255,255,255,0.55);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+
+}
+
+
+/* =========================
+   GAME FLOW
+========================= */
+
+.game-flow {
+
+    position: absolute;
+
+    left: 455px;
+    right: 70px;
+    bottom: 30px;
+
+}
+
+
+.flow-title {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 12px;
+
+    color:
+        rgba(255,255,255,0.45);
+
+    font-size: 12px;
+
+    letter-spacing: 3px;
+
+}
+
+
+.flow-title span {
+
+    width: 20px;
+    height: 2px;
+
+    background: #ff1682;
+
+}
+
+
+.flow {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 13px 20px;
+
+    background:
+        rgba(0,0,0,0.7);
+
+    border:
+        1px solid
+        rgba(255,22,130,0.3);
+
+}
+
+
+.flow-item {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 2px;
+
+}
+
+
+.flow-item strong {
+
+    font-size: 17px;
+
+    letter-spacing: 2px;
+
+}
+
+
+.flow-item small {
+
+    color:
+        rgba(255,255,255,0.4);
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+}
+
+
+.flow-arrow {
+
+    color: #ff1682;
+
+    font-size: 25px;
+
+}
+
+
+.winner strong {
+
+    color: #ff1682;
+
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.htp-footer {
+
+    position: absolute;
+
+    bottom: 0;
+
+    left: 0;
+    right: 0;
+
+    height: 65px;
+
+    z-index: 20;
+
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    align-items: center;
+
+    padding:
+        0 55px;
+
+    background:
+        rgba(0,0,0,0.82);
+
+    border-top:
+        1px solid
+        rgba(255,22,130,0.4);
+
+}
+
+
+.back-button {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    border: none;
+
+    background: none;
+
+    color: white;
+
+    font-family:
+        "Barlow Condensed",
+        sans-serif;
+
+    cursor: pointer;
+
+    letter-spacing: 2px;
+
+}
+
+
+.back-button .key {
+
+    padding:
+        5px 10px;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.7);
+
+    font-size: 11px;
+
+}
+
+
+.back-button strong {
+
+    color: #ff1682;
+
+    font-size: 22px;
+
+}
+
+
+.back-button:hover {
+
+    color: #ff1682;
+
+}
+
+
+.footer-status {
+
+    color:
+        rgba(255,255,255,0.4);
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+}
+
+
+/* =========================
+   SMALL SCREEN
+========================= */
+
+@media (max-width: 950px) {
+
+    .htp-content {
+
+        grid-template-columns:
+            220px 1fr;
+
+        gap: 25px;
+
+        padding:
+            30px;
+
+    }
+
+
+    .htp-title h1 {
+
+        font-size: 65px;
+
+    }
+
+
+    .instruction-card {
+
+        min-height: 125px;
+
+        padding: 17px;
+
+    }
+
+
+    .game-flow {
+
+        left: 275px;
+
+        right: 30px;
+
+    }
+
+}
+
+
+@media (max-height: 700px) {
+
+    .htp-content {
+
+        padding:
+            20px 50px;
+
+    }
+
+
+    .instruction-card {
+
+        min-height: 110px;
+
+    }
+
+
+    .htp-title h1 {
+
+        font-size: 60px;
+
+    }
+
+
+    .card-content p {
+
+        font-size: 10px;
+
+    }
+    .how-to-play .background-layer {
+    position: absolute;
+    inset: 0;
+
+    background-image: url("../assets/menu-bg.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    z-index: 0;
+}
+
+}

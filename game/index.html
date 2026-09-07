@@ -12,27 +12,47 @@
 
     <title>Last One Standing</title>
 
-    <style>
+    <!-- =========================================================
+         FRIEND'S UI STYLES
+         ========================================================= -->
 
-        body {
-            margin: 0;
-            overflow: hidden;
-            background: #87ceeb;
-        }
-
-        canvas {
-            display: block;
-        }
-
-    </style>
+    <link rel="stylesheet" href="./src/ui/menu.css">
+    <link rel="stylesheet" href="./src/ui/howToPlay.css">
+    <link rel="stylesheet" href="./src/ui/roundSelect.css">
 
 </head>
 
 <body>
 
+    <!-- =========================================================
+         SUPABASE
+         ---------------------------------------------------------
+         This makes Supabase available globally as:
+         window.supabase
+
+         Our actual game/networking system uses this when
+         game.html is opened.
+         ========================================================= -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js">
+    </script>
+
+
+    <!-- =========================================================
+         FRIEND'S MENU SYSTEM
+         ---------------------------------------------------------
+         This starts:
+         MAIN MENU
+              ↓
+         HOW TO PLAY
+              ↓
+         ROUND SELECT
+         ========================================================= -->
+
     <script
         type="module"
-        src="./src/game.js">
+        src="./src/ui/uiTest.js">
     </script>
 
 </body>

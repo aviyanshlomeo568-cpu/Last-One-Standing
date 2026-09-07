@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Red Light Green Light</title>
+
+    <style>
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background: #87ceeb;
+        }
+
+        canvas {
+            display: block;
+        }
+
+    </style>
+
+
+    <!-- =========================================================
+         THREE.JS
+         ========================================================= -->
+
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js"
+        }
+    }
+    </script>
+
+</head>
+
+<body>
+
+    <!-- =========================================================
+         SUPABASE
+         ========================================================= -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js">
+    </script>
+
+
+    <!-- =========================================================
+         OUR WORKING GAME
+         ========================================================= -->
+
+    <script
+        type="module"
+        src="./src/game.js">
+    </script>
+
+</body>
+
+</html>
